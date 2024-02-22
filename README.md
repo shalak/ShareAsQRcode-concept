@@ -14,6 +14,8 @@ services:
       context: ./ShareAsQRcode-concept
     ports:
       - '8080:80'
+    environment:
+      - APP_TITLE=your_title  # if not set, it will fall back to ShareAsQRCode.com
 ```
 3. Start the container:
 ```shell

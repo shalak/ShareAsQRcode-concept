@@ -17,6 +17,8 @@
     const params = Object.fromEntries(urlSearchParams.entries());
     text = params['urlText'] || params['bodyText'] || params['titleText'] || text;
   });
+
+  let appTitle = import.meta.env.VITE_APP_TITLE;
 </script>
 
 <svelte:window
@@ -27,7 +29,7 @@
 />
 <main class="flex max-w-xl mx-auto flex-col min-h-[100dvh] justify-center items-center gap-4 py-3">
   <div class="grow" />
-  <h1 class="text-2xl md:text-4xl lg:text-5xl text-center font-bold text-primary font-heading">ShareAsQRCode.com</h1>
+  <h1 class="text-2xl md:text-4xl lg:text-5xl text-center font-bold text-primary font-heading">{appTitle}</h1>
   {#if text}
     <QrCode {text} class="w-full max-w-xl fill-paper stroke-black" />
   {/if}
