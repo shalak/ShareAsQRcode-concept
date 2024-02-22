@@ -12,10 +12,10 @@ services:
     container_name: shareasqrcode
     build:
       context: ./ShareAsQRcode-concept
+      args:
+        - APP_TITLE=my_page_title # if not set, it will fall back to ShareAsQRCode.com
     ports:
       - '8080:80'
-    environment:
-      - APP_TITLE=your_title  # if not set, it will fall back to ShareAsQRCode.com
 ```
 3. Start the container:
 ```shell

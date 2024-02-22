@@ -1,15 +1,15 @@
 # Build stage
 FROM node:20-alpine as build-stage
+ARG APP_TITLE
 
 WORKDIR /app
 
-RUN node -v
 COPY package*.json ./
 
-ENV VITE_BUILD_MODE=production
 RUN npm install
 
 COPY . .
+ENV APP_TITLE=$APP_TITLE
 
 RUN npm run build
 
